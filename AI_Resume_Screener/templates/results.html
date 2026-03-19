@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screening Results - AI Resume Screener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Candidate Ranking Results</h1>
+                <a href="/" class="btn-secondary">← Back to Upload</a>
+            </div>
+        </header>
+        
+        <main>
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                  <li class="success-msg">{{ message }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+
+            <div class="table-container">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Candidate Name</th>
+                            <th>Match Score</th>
+                            <th>Extracted Email</th>
+                            <th>Missing Skills</th>
+                            <th>Improvement Suggestions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for candidate in candidates %}
+                        <tr>
+                            <td>
+                                <strong>{{ candidate.name }}</strong><br>
+                                <small class="text-muted">{{ candidate.filename }}</small>
+                            </td>
+                            <td><span class="score-badge">{{ candidate.score }}%</span></td>
+                            <td>{{ candidate.email }}</td>
+                            <td>
+                                <div class="tags">
+                                    {% for skill in candidate.missing_skills %}
+                                    <span class="tag missing-tag">{{ skill }}</span>
+                                    {% else %}
+                                    <span class="text-success">Matches all JD skills!</span>
+                                    {% endfor %}
+                                </div>
+                            </td>
+                            <td>
+                                <ul class="suggestions-list">
+                                    {% for suggestion in candidate.suggestions %}
+                                    <li>{{ suggestion }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="action-section">
+                <form action="/send_emails" method="POST">
+                    <button type="submit" class="btn-primary btn-large">Send Improvements to All Candidates</button>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

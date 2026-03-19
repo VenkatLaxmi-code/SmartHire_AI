@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Screener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Resume Screener</h1>
+            <p>Upload resumes and a job description to find the best candidates.</p>
+        </header>
+        
+        <main>
+            {% if error %}
+            <div class="error-msg">{{ error }}</div>
+            {% endif %}
+            
+            <form action="/" method="POST" enctype="multipart/form-data" class="upload-form">
+                <div class="form-group">
+                    <label for="job_description">Job Description</label>
+                    <textarea id="job_description" name="job_description" rows="8" placeholder="Paste the job description here..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="resumes">Upload Resumes (PDF, DOCX)</label>
+                    <input type="file" id="resumes" name="resumes" accept=".pdf,.docx" multiple required>
+                    <small>You can select multiple files.</small>
+                </div>
+                
+                <button type="submit" class="btn-primary">Analyze Resumes</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
