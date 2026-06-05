@@ -97,5 +97,8 @@ Contributions are welcome! Feel free to fork this repo and submit a pull request
 - Open-source community
 
 ---
+## 👨‍💻 Author
+
+Venkat Laxmi Gottam
 
 ⭐ If you like this project, don’t forget to star the repo!
