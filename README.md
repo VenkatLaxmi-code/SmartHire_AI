@@ -50,7 +50,7 @@ git clone https://github.com/VenkatLaxmi-code/ResumeBoost-AI.git
 2. Navigate to project folder:
 
 ```
-cd ResumeBoost-AI
+cd AI_RESUME_SCREENER 
 ```
 
 3. Install dependencies:
