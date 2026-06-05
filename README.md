@@ -98,6 +98,25 @@ Contributions are welcome! Feel free to fork this repo and submit a pull request
 - Open-source community
 
 ---
+
+## 📸 Screenshots
+
+<h3>📄 Resume & JD Upload Interface</h3>
+<p align="center">
+  <img src="assets/img1.png" width="600">
+</p>
+
+<h3>🤖 Uploaded Resume and JD </h3>
+<p align="center">
+  <img src="assets/img2.png" width="600">
+</p>
+
+<h3>📊 AI-Powered Suggestions , Results & Feeback to Candidate email</h3>
+<p align="center">
+  <img src="assets/img3.png" width="600">
+</p>
+
+
 ## 👨‍💻 Author
 
 Venkat Laxmi Gottam
