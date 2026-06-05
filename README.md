@@ -27,7 +27,7 @@ An AI-powered Resume Screening and Enhancement System that analyzes resumes, ext
 ## 📂 Project Structure
 
 ```
-ResumeBoost-AI/
+AI_Resume_Screener/
 │── app.py
 │── skill_extractor.py
 │── requirements.txt
@@ -69,6 +69,7 @@ python app.py
 
 ## 🚀 Usage
 
+- Upload a JD
 - Upload a resume
 - System extracts skills & details
 - AI analyzes and gives suggestions
