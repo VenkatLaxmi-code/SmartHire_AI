@@ -1,4 +1,4 @@
-# 🚀 ResumeBoost-AI
+# 🚀 SmartHire-AI
 
 An AI-powered Resume Screening and Enhancement System that analyzes resumes, extracts key information, and provides smart suggestions to improve candidate profiles.
 
